@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 import express from "express";
-import serverless from "serverless-http";
 import connectDB from "./database/connectDB";
 import Route from "./routes/index";
 import errorMiddleware from "./middleware/error";
@@ -15,11 +14,11 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
   res.json({ response: "Working v1.0" });
 });
-app.use("/api", Route);
 app.use(errorMiddleware);
+app.use("/api", Route);
 
-// Connect to DB
+// Connect to DB when the app initializes
 connectDB();
 
-// Export as serverless function
-export const handler = serverless(app);
+// Export the app for Vercel
+export default app;

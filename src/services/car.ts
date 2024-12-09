@@ -27,6 +27,7 @@ export const getCarsByUserId = async (userId: string) => {
       data: cars,
     };
   } catch (error) {
+    console.error("Error retrieving cars:", error);
     return {
       status: "error",
       message: "Failed to retrieve cars",
