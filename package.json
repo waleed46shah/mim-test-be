@@ -2,9 +2,11 @@
   "name": "desoltest",
   "version": "1.0.0",
   "description": "",
-  "main": "/src/index.ts",
+  "main": "/build/index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node build/index.js"
   },
   "author": "",
   "license": "ISC",
