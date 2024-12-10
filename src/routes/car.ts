@@ -4,7 +4,7 @@ import verifyToken from "../middleware/verifyToken";
 
 const router = express.Router();
 
-router.post("/", verifyToken, createCarController);
-router.get("/:userId", verifyToken, fetchCarsByUserId);
+router.post("/", createCarController);
+router.get("/:userId", fetchCarsByUserId);
 
 export default router;
