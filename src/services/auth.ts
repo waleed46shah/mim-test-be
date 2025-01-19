@@ -53,7 +53,7 @@ export const loginUser = async ({ email, password }: LoginInput) => {
     }
 
     const token = jwt.sign(
-      { _id: user._id },
+      { _id: user._id, name: user.name, email: user.email },
       process.env.JWT_SECRET as string,
       {
         expiresIn: "1d",
@@ -63,7 +63,7 @@ export const loginUser = async ({ email, password }: LoginInput) => {
     return {
       status: "success",
       message: "User logged in successfully",
-      data: { token },
+      data: { token, name: user.name, email: user.email },
     };
   } catch (error) {
     return {
