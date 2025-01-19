@@ -34,3 +34,14 @@ export const login = async (
     return res.status(400).json(result);
   }
 };
+
+export const logout = (req: Request, res: Response) => {
+  res
+    .clearCookie("token", {
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
+    })
+    .status(200)
+    .json({ status: "success", message: "User logged out successfully" });
+};
