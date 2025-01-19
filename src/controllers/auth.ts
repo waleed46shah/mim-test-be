@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import jwt from "jsonwebtoken";
-import { registerUser, loginUser } from "../services/auth";
-import { RegisterInput, LoginInput } from "../types/types";
+import { loginUser, registerUser } from "../services/auth";
+import { LoginInput, RegisterInput } from "../types/types";
 
 export const register = async (
   req: Request<{}, {}, RegisterInput>,
