@@ -69,5 +69,5 @@ http://localhost:8080
 Tech Stack
 	•	Backend: Node.js, Express, Typescript
 	•	Database: MongoDB
-	•	Authentication: JWT (JSON Web Token)
+	•	Authentication: JWT (JSON Web Token) with cookies to handle session on backend
 	•	Others: Bcrypt
